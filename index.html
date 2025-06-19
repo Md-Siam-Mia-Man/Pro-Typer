@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Typer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main id="main-page" class="page active">
+        <div class="app-container">
+            <header class="top-bar">
+                <div class="top-left">
+                    <button id="settings-button" class="nav-btn" title="Settings"><i class="fas fa-cog"></i></button>
+                    <button id="stats-button" class="nav-btn" title="View Stats"><i class="fas fa-chart-line"></i></button>
+                </div>
+            </header>
+            <div id="typing-container" class="typing-area">
+                <div id="phrase-container">
+                    <div id="phrase-wrapper"></div>
+                </div>
+            </div>
+            <div class="keyboard">
+                <div class="keyboard-row indicators">
+                    <div id="timer-ui">0.0s</div>
+                    <div id="wpm-display">
+                        <span class="value">0</span><span class="label">WPM</span>
+                    </div>
+                    <div class="lights">
+                        <div class="light-indicator"><div id="num-lock-led" class="led"></div><span class="label">Num</span></div>
+                        <div class="light-indicator"><div id="caps-lock-led" class="led"></div><span class="label">Caps</span></div>
+                        <div class="light-indicator"><div id="scroll-lock-led" class="led"></div><span class="label">Scroll</span></div>
+                    </div>
+                </div>
+                <div class="keyboard-layout">
+                    <div class="main-keys">
+                        <div class="keyboard-row">
+                            <div class="key" data-key="Backquote"><span>`</span></div>
+                            <div class="key" data-key="Digit1"><span>1</span></div>
+                            <div class="key" data-key="Digit2"><span>2</span></div>
+                            <div class="key" data-key="Digit3"><span>3</span></div>
+                            <div class="key" data-key="Digit4"><span>4</span></div>
+                            <div class="key" data-key="Digit5"><span>5</span></div>
+                            <div class="key" data-key="Digit6"><span>6</span></div>
+                            <div class="key" data-key="Digit7"><span>7</span></div>
+                            <div class="key" data-key="Digit8"><span>8</span></div>
+                            <div class="key" data-key="Digit9"><span>9</span></div>
+                            <div class="key" data-key="Digit0"><span>0</span></div>
+                            <div class="key" data-key="Minus"><span>-</span></div>
+                            <div class="key" data-key="Equal"><span>=</span></div>
+                            <div class="key key-wide" data-key="Backspace"><span><i class="fas fa-backspace"></i></span></div>
+                        </div>
+                        <div class="keyboard-row">
+                            <div class="key key-wide" data-key="Tab"><span><i class="fas fa-arrow-right-to-bracket fa-rotate-180"></i> Tab</span></div>
+                            <div class="key" data-key="KeyQ"><span>Q</span></div>
+                            <div class="key" data-key="KeyW"><span>W</span></div>
+                            <div class="key" data-key="KeyE"><span>E</span></div>
+                            <div class="key" data-key="KeyR"><span>R</span></div>
+                            <div class="key" data-key="KeyT"><span>T</span></div>
+                            <div class="key" data-key="KeyY"><span>Y</span></div>
+                            <div class="key" data-key="KeyU"><span>U</span></div>
+                            <div class="key" data-key="KeyI"><span>I</span></div>
+                            <div class="key" data-key="KeyO"><span>O</span></div>
+                            <div class="key" data-key="KeyP"><span>P</span></div>
+                            <div class="key" data-key="BracketLeft"><span>[</span></div>
+                            <div class="key" data-key="BracketRight"><span>]</span></div>
+                            <div class="key key-wide" data-key="Backslash"><span>\</span></div>
+                        </div>
+                        <div class="keyboard-row">
+                            <div class="key key-wider" data-key="CapsLock"><span>Caps</span></div>
+                            <div class="key" data-key="KeyA"><span>A</span></div>
+                            <div class="key" data-key="KeyS"><span>S</span></div>
+                            <div class="key" data-key="KeyD"><span>D</span></div>
+                            <div class="key" data-key="KeyF"><span>F</span></div>
+                            <div class="key" data-key="KeyG"><span>G</span></div>
+                            <div class="key" data-key="KeyH"><span>H</span></div>
+                            <div class="key" data-key="KeyJ"><span>J</span></div>
+                            <div class="key" data-key="KeyK"><span>K</span></div>
+                            <div class="key" data-key="KeyL"><span>L</span></div>
+                            <div class="key" data-key="Semicolon"><span>;</span></div>
+                            <div class="key" data-key="Quote"><span>'</span></div>
+                            <div class="key key-wider" data-key="Enter"><span><i class="fas fa-level-down-alt fa-rotate-90"></i></span></div>
+                        </div>
+                        <div class="keyboard-row">
+                            <div class="key key-widest" data-key="ShiftLeft"><span><i class="fas fa-arrow-up"></i> Shift</span></div>
+                            <div class="key" data-key="KeyZ"><span>Z</span></div>
+                            <div class="key" data-key="KeyX"><span>X</span></div>
+                            <div class="key" data-key="KeyC"><span>C</span></div>
+                            <div class="key" data-key="KeyV"><span>V</span></div>
+                            <div class="key" data-key="KeyB"><span>B</span></div>
+                            <div class="key" data-key="KeyN"><span>N</span></div>
+                            <div class="key" data-key="KeyM"><span>M</span></div>
+                            <div class="key" data-key="Comma"><span>,</span></div>
+                            <div class="key" data-key="Period"><span>.</span></div>
+                            <div class="key" data-key="Slash"><span>/</span></div>
+                            <div class="key key-widest" data-key="ShiftRight"><span><i class="fas fa-arrow-up"></i> Shift</span></div>
+                        </div>
+                        <div class="keyboard-row">
+                            <div class="key key-wide" data-key="ControlLeft"><span>Ctrl</span></div>
+                            <div class="key key-wide" data-key="MetaLeft"><span><i class="fab fa-windows"></i></span></div>
+                            <div class="key key-wide" data-key="AltLeft"><span>Alt</span></div>
+                            <div class="key key-space" data-key="Space"></div>
+                            <div class="key key-wide" data-key="AltRight"><span>Alt</span></div>
+                            <div class="key key-wide" data-key="ContextMenu"><span><i class="fas fa-bars"></i></span></div>
+                            <div class="key key-wide" data-key="ControlRight"><span>Ctrl</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div id="settings-page" class="page">
+        <button class="back-button" data-target="main-page"><i class="fas fa-arrow-left"></i> Back</button>
+        <h1>Settings</h1>
+        <div class="settings-grid">
+            <div class="settings-group">
+                <h2>Game Mode</h2>
+                <div id="custom-select-mode" class="custom-select-wrapper"></div>
+            </div>
+            <div class="settings-group">
+                <h2>Time (for Timed Mode)</h2>
+                <div id="custom-select-time" class="custom-select-wrapper"></div>
+            </div>
+            <div class="settings-group">
+                <h2>Appearance</h2>
+                <div class="options-container" id="theme-options">
+                    <button class="option-button theme-swatch" data-theme="dark" title="Default Dark" style="background-color: #25282c;"></button>
+                    <button class="option-button theme-swatch" data-theme="light" title="Default Light" style="background-color: #e0e5ec;"></button>
+                </div>
+            </div>
+            <div class="settings-group">
+                <h2>Effects</h2>
+                <div class="options-container">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="rgb-toggle">
+                        <span class="slider"></span>
+                    </label>
+                    <span class="toggle-label">RGB Keyboard Effect</span>
+                </div>
+            </div>
+            <div class="settings-group">
+                <h2>Custom Texts</h2>
+                <button id="manage-texts-button" class="option-button">Manage Your Texts</button>
+            </div>
+            <div class="settings-group">
+                <h2>Reset</h2>
+                <div class="options-container">
+                    <button id="reset-stats-button" class="option-button danger">Reset Stats</button>
+                    <button id="factory-reset-button" class="option-button danger">Factory Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="stats-page" class="page">
+        <button class="back-button" data-target="main-page"><i class="fas fa-arrow-left"></i> Back</button>
+        <h1>Your Progress</h1>
+        <div class="stats-summary">
+            <div class="stat-box"><div class="value" id="stats-highest-wpm">0</div><div class="label">Highest WPM</div></div>
+            <div class="stat-box"><div class="value" id="stats-avg-wpm">0</div><div class="label">Average WPM</div></div>
+            <div class="stat-box"><div class="value" id="stats-avg-acc">0%</div><div class="label">Avg Accuracy</div></div>
+            <div class="stat-box"><div class="value" id="stats-tests-taken">0</div><div class="label">Tests Taken</div></div>
+        </div>
+        <div class="chart-container">
+            <canvas id="progress-chart"></canvas>
+        </div>
+    </div>
+
+    <div id="custom-texts-page" class="page">
+        <button class="back-button" data-target="settings-page"><i class="fas fa-arrow-left"></i> Back</button>
+        <h1>Custom Texts</h1>
+        <div class="custom-texts-container">
+            <div class="custom-texts-controls">
+                <div id="custom-select-text-type" class="custom-select-wrapper"></div>
+                <button id="add-new-text-button" class="option-button primary"><i class="fas fa-plus"></i> Add New</button>
+            </div>
+            <ul id="custom-texts-list" class="custom-texts-list"></ul>
+        </div>
+    </div>
+    
+    <!-- Modals -->
+    <div id="text-editor-modal" class="modal-overlay">
+        <div class="modal-box">
+            <h2 id="modal-title">Add New Text</h2>
+            <textarea id="modal-textarea" rows="4"></textarea>
+            <div class="modal-actions">
+                <button id="modal-cancel-button" class="option-button">Cancel</button>
+                <button id="modal-save-button" class="option-button primary">Save</button>
+            </div>
+        </div>
+    </div>
+    <div id="success-overlay" class="modal-overlay">
+        <div class="modal-box">
+            <h1 id="success-message">Time's Up!</h1>
+            <div class="results-grid">
+                <div class="result-item"><span class="value" id="final-wpm">0</span><span class="label">WPM</span></div>
+                <div class="result-item"><span class="value" id="final-accuracy">100%</span><span class="label">Accuracy</span></div>
+                <div class="result-item"><span class="value" id="final-chars">0</span><span class="label">Characters</span></div>
+            </div>
+            <p id="personal-best" class="hidden">New Personal Best! <i class="fas fa-star"></i></p>
+            <p class="next-prompt">Press Enter to try again</p>
+        </div>
+    </div>
+    
+    <audio id="key-sound" src="assets/key-press.wav" preload="auto"></audio>
+    <audio id="success-sound" src="assets/success.wav" preload="auto"></audio>
+    <script>const Chart = require('chart.js/auto');</script>
+    <script src="renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "name": "pro-typer",
+  "version": "1.0.0",
+  "description": "A gorgeous typing app for learning to type fast.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "make-installer": "electron-forge package && node build-installer.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@electron-forge/cli": "^7.8.1",
+    "@electron-forge/maker-deb": "^7.8.1",
+    "@electron-forge/maker-rpm": "^7.8.1",
+    "@electron-forge/maker-squirrel": "^7.8.1",
+    "@electron-forge/maker-zip": "^7.8.1",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.8.1",
+    "@electron-forge/plugin-fuses": "^7.8.1",
+    "@electron/fuses": "^1.8.0",
+    "electron": "^36.4.0",
+    "innosetup-compiler": "^6.3.1"
+  },
+  "dependencies": {
+    "chart.js": "^4.5.0",
+    "electron-squirrel-startup": "^1.0.1"
+  }
+}

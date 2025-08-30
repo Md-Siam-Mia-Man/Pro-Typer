@@ -48,7 +48,7 @@ This app was built with ❤️ using **Electron**, allowing it to run as a nativ
 
 1. **Download the Installer**
 
-   - Go to the [**Releases**](https://github.com/Md-Siam-Mia/Pro-Typer/releases) page of this repository.
+   - Go to the [**Releases**](https://github.com/Md-Siam-Mia-Man/Pro-Typer/releases) page of this repository.
    - Download the latest `Pro-Typer-Setup-vX.X.X.exe` file.
 
 2. **Run the Installer**
